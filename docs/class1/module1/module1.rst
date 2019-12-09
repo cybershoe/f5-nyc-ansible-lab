@@ -34,6 +34,7 @@ Using apt
 ---------
 
 1.	Open an SSH session or Terminal window to the Ubuntu host
+
 2.	Run the following command to install the *python-virtualenv* package:
 
   ::
@@ -72,7 +73,31 @@ Using the *virtualenv* command
 
   |image1|
 
+Task 3: Installing Ansible
+~~~~~~~~~~~~~~~~~~~~~~~~~~
 
+Using pip
+---------
+
+*pip* is a package manager for Python. We will be using it to install the
+Ansible packages into our virtual environment
+
+1. Run the following command to install Ansible via pip:
+
+  .. code-block::
+
+    $ pip install ansible
+
+.. NOTE:: Keep an eye on the console output. You can see that all of the
+  dependencies for Ansible are installed for you automatically.
+
+2. Check the installed version of Ansible with the following command:
+
+  ::
+
+    $ ansible --version
+
+.. NOTE:: Keep your SSH or terminal session open for the next lab.
 
 3. In the **Create New SAML SP Service** dialog box click **General Settings** in the left navigation pane and key in the following as shown:
 
