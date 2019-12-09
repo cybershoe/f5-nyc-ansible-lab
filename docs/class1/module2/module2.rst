@@ -65,13 +65,13 @@ TASK 2 ‑ Review the first playbook
     the "q" key to quit back to the prompt.
 
 Take a look at the structure of the playbook. How many tasks are there? How do
-  the F5 modules know how to connect to the BIG-IP system being confugured?
+the F5 modules know how to connect to the BIG-IP system being confugured?
 
 TASK 3 - Run the first playbook
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 1. From the SSH or terminal session, run the following command to create the 
-  new virutal environment:
+new virutal environment:
 
   .. code-block:: bash
 
@@ -83,8 +83,8 @@ Task 4: Inspecting the results of the first playbook
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 1. Back in the BIG-IP GUI, go back to the **Virtual Servers**, **Pools**, and
-  **Nodes** screens. How has the configuration changed after running the
-  playbook? 
+**Nodes** screens. How has the configuration changed after running the 
+playbook? 
 
 .. NOTE:: Keep your SSH or terminal session open for the next lab.
 
