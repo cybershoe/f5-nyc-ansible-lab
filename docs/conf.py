@@ -8,7 +8,7 @@
 classname = "F5 Identity and Access Management Solutions"
 
 # OPTIONAL: The URL to the GitHub Repository for this class
-github_repo = "https://github.com/f5devcentral/f5-agility-labs-iam"
+github_repo = "https://github.com/cybershoe/f5-nyc-ansible-lab.git"
 
 # OPTIONAL: Google Analytics
 # googleanalytics_id = 'UA-85156643-4'
@@ -160,13 +160,13 @@ todo_include_todos = True
 # The theme to use for HTML and HTML Help pages.  See the documentation for
 # a list of builtin themes.
 
-html_theme = 'f5_sphinx_theme'
-html_theme_path = f5_sphinx_theme.get_html_theme_path()
-html_sidebars = {'**': ['searchbox.html', 'localtoc.html', 'globaltoc.html','relations.html']}
-html_theme_options = {
-                        'site_name': 'Community Training Classes & Labs',
-                        'next_prev_link': True
-                     }
+#html_theme = 'f5_sphinx_theme'
+#html_theme_path = f5_sphinx_theme.get_html_theme_path()
+#html_sidebars = {'**': ['searchbox.html', 'localtoc.html', 'globaltoc.html','relations.html']}
+#html_theme_options = {
+#                        'site_name': 'Community Training Classes & Labs',
+#                        'next_prev_link': True
+#                     }
 
 def setup(app):
     app.add_stylesheet('css/f5_agility_theme.css')
