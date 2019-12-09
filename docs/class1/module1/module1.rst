@@ -1,14 +1,18 @@
-Lab 1: SAML Service Provider (SP) Lab
+Lab 1: Installing Ansible in a Virtualenv
 =====================================
 
 .. toctree::
    :maxdepth: 1
    :glob:
 
-The purpose of this lab is to configure and test a SAML Service
-Provider. Students will configure the various aspects of a SAML Service
-Provider, import and bind to a SAML Identity Provider and test
-SP‑Initiated SAML Federation.
+F5 Recommends installing ansible on a python virtualenv.  This is also a 
+recommended way to use ansible within the ansible opensource community. 
+
+Virtualenv creates isolated Python environments to avoid problems caused by 
+conflicting dependencies and differing versions. Virtualenv works by simply 
+creating a folder which contains all of the necessary executables and 
+dependencies for a specific version of Python
+
 
 Objective:
 
