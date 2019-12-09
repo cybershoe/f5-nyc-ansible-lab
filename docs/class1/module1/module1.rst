@@ -84,9 +84,9 @@ Ansible packages into our virtual environment
 
 1. Run the following command to install Ansible via pip:
 
-  .. code-block::
+  .. code-block:: bash
 
-    $ pip install ansible
+    pip install ansible
 
 .. NOTE:: Keep an eye on the console output. You can see that all of the
   dependencies for Ansible are installed for you automatically.
