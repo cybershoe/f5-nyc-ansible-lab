@@ -1,4 +1,4 @@
-Class 1: SAML Federation with F5
+Class 1: F5 Ansible Automation Lab
 ================================
 
 .. toctree::

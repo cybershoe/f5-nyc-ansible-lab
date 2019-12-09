@@ -5,36 +5,39 @@ Lab 1: Installing Ansible in a Virtualenv
    :maxdepth: 1
    :glob:
 
-F5 Recommends installing ansible on a python virtualenv.  This is also a 
-recommended way to use ansible within the ansible opensource community. 
+F5 Recommends installing ansible on a python virtual environment (virtualenv). 
+This is also a recommended way to use ansible within the ansible opensource 
+community. 
 
-Virtualenv creates isolated Python environments to avoid problems caused by 
-conflicting dependencies and differing versions. Virtualenv works by simply 
+*virtualenv* creates isolated Python environments to avoid problems caused by 
+conflicting dependencies and differing versions. *virtualenv* works by simply 
 creating a folder which contains all of the necessary executables and 
-dependencies for a specific version of Python
+dependencies for a specific version of Python.
 
 
 Objective:
 
--  Gain an understanding of SAML Service Provider(SP) configurations and
-   its component parts
+-  Understand how to install *python-virtualenv* in Debian/Ubuntu Linux
 
--  Gain an understanding of the access flow for SP-Initiated SAML
+-  Create a virtual environment in which to run Ansible
 
 Lab Requirements:
 
--  All Lab requirements will be noted inƒ the tasks that follow
+-  SSH or Terminal access to the Ubuntu Jumpbox/Ansible Host
 
-Estimated completion time: 25 minutes
+Estimated completion time: 5 minutes
 
-TASK 1 ‑ Configure the SAML Service Provider (SP)
+TASK 1 ‑ Install the *python-virtualenv* package
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-SP Service
-----------
+Using apt
+---------
 
-1.	Begin by selecting: **Access -> Federation -> SAML Service Provider -> Local SP Services**
-2.	Click the **Create** button (far right)
+1.	Open an SSH session or Terminal window to the Ubuntu host
+2.	Run the following command
+  ::
+    sudo apt install python-virtualenv
+
 
 |image1|
 
