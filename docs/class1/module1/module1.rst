@@ -1,10 +1,6 @@
 Lab 1: Installing Ansible in a Virtualenv
 =====================================
 
-.. toctree::
-   :maxdepth: 1
-   :glob:
-
 F5 Recommends installing ansible on a python virtual environment (virtualenv). 
 This is also a recommended way to use ansible within the ansible opensource 
 community. 
