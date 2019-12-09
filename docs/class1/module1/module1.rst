@@ -35,7 +35,9 @@ Using apt
 
 1.	Open an SSH session or Terminal window to the Ubuntu host
 2.	Run the following command
+
   ::
+
     sudo apt install python-virtualenv
 
 
