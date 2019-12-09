@@ -28,20 +28,51 @@ Lab Requirements:
 Estimated completion time: 5 minutes
 
 TASK 1 ‑ Install the *python-virtualenv* package
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Using apt
 ---------
 
 1.	Open an SSH session or Terminal window to the Ubuntu host
-2.	Run the following command
+2.	Run the following command to install the *python-virtualenv* package:
 
   ::
 
-    sudo apt install python-virtualenv
+    $ sudo apt install python-virtualenv
+
+.. NOTE:: You will be prompted for a password. Use the same password you
+  used to log into the jumphost
+
+.. NOTE:: In the lab environment, this package is already installed. Unless
+  there has been a new version released since the lab was built, you should
+  receive a message that the package is already at the newest version.
+
+TASK 2 - Create the virtual environment
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Using the *virtualenv* command
+------------------------------
+
+1. Run the following command to create the new virutal environment:
+
+  ::
+
+    $ virtualenv myansible
+
+2. Run the following command to begin working in the virtual environment:
+
+  ::
+
+    $ source myansible/bin/activate
+
+.. NOTE:: Take a look at your command prompt: You'll see that it now shows
+  the name of the active virtual environment. Any future python commands that
+  change your environment (e.g.: instaling a package with *pip install*) will 
+  take effect within this environment, and won't affect the system as a whole.
+
+  |image1|
 
 
-|image1|
 
 3. In the **Create New SAML SP Service** dialog box click **General Settings** in the left navigation pane and key in the following as shown:
 
@@ -268,7 +299,7 @@ TASK 4 ‑ Test the SAML SP
 
    <br />
 
-.. |image1| image:: /_static/class1/image3.png
+.. |image1| image:: /_static/class1/image1.png
 .. |image2| image:: /_static/class1/image4.png
 .. |image3| image:: /_static/class1/image5.png
 .. |image4| image:: /_static/class1/image6.png
