@@ -26,9 +26,6 @@ Estimated completion time: 5 minutes
 TASK 1 ‑ Install the *python-virtualenv* package
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Using apt
----------
-
 1.	Open an SSH session or Terminal window to the Ubuntu host
 
 2.	Run the following command to install the *python-virtualenv* package:
@@ -46,9 +43,6 @@ Using apt
 
 TASK 2 - Create the virtual environment
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-Using the *virtualenv* command
-------------------------------
 
 1. Run the following command to create the new virutal environment:
 
@@ -71,9 +65,6 @@ Using the *virtualenv* command
 
 Task 3: Installing Ansible
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-Using pip
----------
 
 *pip* is a package manager for Python. We will be using it to install the
 Ansible packages into our virtual environment
