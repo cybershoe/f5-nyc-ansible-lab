@@ -6,9 +6,7 @@ playbook. You can learn more about tags from the `Ansible Tags Documentation`_.
 
 Objective:
 
--  Understand the basic structure of an Ansible Playbook
-
--  Deploy a simple BIG-IP configuration using Ansible
+-  Use tags to re-run a subset of the first playbook
 
 Lab Requirements:
 
@@ -18,75 +16,64 @@ Lab Requirements:
 
 Estimated completion time: 10 minutes
 
-TASK 1 - Review the BIG-IP configuration
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+TASK 1 - Delete the virtual server
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-1. Log in to the BIG-IP web gui.
+1. In the BIG-IP web GUI, from the left-hand navigation menu, navigate to 
+**Local Traffic** -> **Virtual Servers**
 
-2. From the left-hand navigation menu, expand the **Local Traffic** section
+2. Select the *web_vip* virtual server, and click **Delete...**
 
-3. Explore the **Virtual Servers**, **Pools**, and **Nodes** sections
+  |image4|
 
-  |image3|
+3. On the following screen, click **Delete** again to confirm.
 
-There should be no pre-existing configuration on the BIG-IP
+.. NOTE:: The Virtual Server list should now be empty
 
 
-TASK 2 ‑ Review the first playbook
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+TASK 2 ‑ Re-run the playbook with a specific tag
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-1.	From the SSH or terminal session, change into the demo1 folder:
-
-  .. code-block:: bash
-
-    $ cd ~/demo1
-
-2.	List the files in the demo1 folder:
+1.	From the SSH or terminal session, re-run the playbook with the "virtual" 
+tag:
 
   .. code-block:: bash
 
-    $ ls
+    $ ansible-playbook -i inventory/hosts first.yaml --tags virtual
 
-  .. NOTE:: You will see an "inventory" directory. The *hosts* file in this
-    directory usually contains lists of hosts to run plays against, and may also
-    contain grouping information and additional information about those hosts.
-    In this lab, because the F5 Ansible modules use the iControlREST API and run
-    locally rather than connecting to the BIG-IP directly via SSH, the inventory 
-    file only contains one entry, *locahost*.
+Watch the output from the *ansible-playbook* command... do you see all of the
+same lines that you did in the last lab?
 
-3.  Examine the first.yaml playbook:
+2.	Back in the BIG-IP GUI, refresh the Virtual Servers list.
 
-  .. code-block:: bash
+TASK 3 - Remove the configuration from the first playbook
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-    $ less first.yaml
-
-  .. NOTE:: Use the arrow keys or PgUp/PgDn to scroll through the file. Use
-    the "q" key to quit back to the prompt.
-
-Take a look at the structure of the playbook. How many tasks are there? How do
-the F5 modules know how to connect to the BIG-IP system being confugured?
-
-TASK 3 - Run the first playbook
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-1. From the SSH or terminal session, run the following command to create the 
-new virutal environment:
+1. From the SSH or terminal session, examine the firstdel.yaml playbook:
 
   .. code-block:: bash
 
-    $ ansible-playbook -i inventory/hosts first.yaml
+    $ less firstdel.yaml
 
-Watch the output of the ansible-playbook command.
+.. NOTE:: You'll notice two main differences between this playbook and the 
+  *first.yaml* playbook. First, you'll see that each task includes the 
+  :code:`state: absent` parameter. This tells Ansible to remove the object
+  defined in the task rather that create it. You'll also notice that the tasks
+  are in the opposite order from the first playbook. This is because Ansible
+  executes tasks in order, and it is necessary to delete objects in the correct
+  order, i.e.: you cannot delete a pool if a virtual server is using it.
 
-Task 4: Inspecting the results of the first playbook
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+2. Execute the firstdel.yaml playbook:
 
-1. Back in the BIG-IP GUI, go back to the **Virtual Servers**, **Pools**, and
-**Nodes** screens. How has the configuration changed after running the 
-playbook? 
+  .. code-block:: bash
+
+    $ ansible-playbook -i inventory/hosts firstdel.yaml
+
+4. Back in the BIG-IP GUI, go back to the **Virtual Servers**, **Pools**, and
+**Nodes** screens, and confirm that the configuration has been deleted.
 
 .. NOTE:: Keep your SSH or terminal session open for the next lab.
 
-.. |image3| image:: /_static/class1/image3.png
+.. |image4| image:: /_static/class1/image4.png
 
 .. _Ansible Tags Documentation: https://docs.ansible.com/ansible/latest/user_guide/playbooks_tags.html

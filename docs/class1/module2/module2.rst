@@ -22,7 +22,7 @@ Estimated completion time: 10 minutes
 TASK 1 - Review the BIG-IP configuration
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-1. Log in to the BIG-IP web gui.
+1. Log in to the BIG-IP web GUI.
 
 2. From the left-hand navigation menu, expand the **Local Traffic** section
 
