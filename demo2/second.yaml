@@ -1,0 +1,52 @@
+---
+
+- name: Create a VIP, pool and pool members
+  hosts: all
+  connection: local
+
+  vars_files:
+    - netvar.yaml
+
+  tasks:
+    - name: Create a pool
+      tags:
+        - pool 
+      bigip_pool:
+        provider: "{{ ltm01 }}"
+        lb_method: "{{ item.value.lbs_method }}"
+        name: "{{ item.key }}"
+        slow_ramp_time: "{{ item.value.ramp_time }}"
+      with_dict: "{{pools}}"
+      delegate_to: localhost
+      
+
+    - name: Add members to pool
+      tags:
+        - members
+      bigip_pool_member:
+        provider: "{{ ltm01 }}"
+        description: "{{ item.value.desc }}"
+        host: "{{ item.value.ip }}"
+        name: "{{ item.key }}"
+        pool: "{{ item.value.poolname }}"
+        port: "{{ item.value.port }}"
+      with_dict: "{{nodes}}"
+      delegate_to: localhost
+      
+
+    - name: Create a Virtual Server
+      tags: 
+        - virtual
+      bigip_virtual_server:
+        provider: "{{ ltm01 }}"
+        description: web-vip
+        destination: "{{ item.value.destip }}"
+        name: "{{ item.key }}"
+        pool: "{{ item.value.poolname }}"
+        port: "{{ item.value.port }}"
+        snat: "{{ item.value.snat }}"
+        profiles:
+          - "{{ item.value.profile1 }}"
+          - "{{ item.value.profile2 }}"
+      with_dict: "{{virtuals}}"
+      delegate_to: localhost

@@ -1,0 +1,23 @@
+---
+
+- name: Import and Create new ASM Policy
+  hosts: all
+  connection: local
+
+  vars_files:
+    - netvar.yaml
+
+  tasks:
+
+    - name: Import and activate ASM policy
+      tags:
+        - asmpolicy
+      bigip_asm_policy:
+        provider: "{{ ltm01 }}"
+        name: OWA_asm_policy
+        file: owa_asmtemplate.xml
+        active: yes
+        state: present
+      delegate_to: localhost
+
+

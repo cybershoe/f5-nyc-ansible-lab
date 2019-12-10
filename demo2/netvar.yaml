@@ -1,0 +1,90 @@
+ltm01:
+  password: admin
+  server: 10.1.1.245
+  user: admin
+  validate_certs: no
+  server_port: 443
+
+objectstate: present
+
+
+
+#########################
+#Define a list for pools#
+#########################
+
+pools:
+  webpool:
+    ramp_time: 120
+    lbs_method: ratio-member
+  owa:
+    ramp_time: 120
+    lbs_method: round-robin
+
+
+#########################
+#Define nodes Dictionary#
+#########################
+
+nodes:
+  web01:
+    ip: 10.1.20.101
+    port: 80
+    desc: Webserver 01
+    poolname: webpool
+  web02:
+    ip: 10.1.20.102
+    port: 80
+    desc: Webserver 02
+    poolname: webpool
+  web03:
+    ip: 10.1.20.103
+    port: 80
+    desc: Webserver 03
+    poolname: webpool
+  web04:
+    ip: 10.1.20.104
+    port: 80
+    desc: Webserver 04
+    poolname: webpool
+  web05:
+    ip: 10.1.20.105
+    port: 80
+    desc: Webserver 05
+    poolname: webpool
+  owa01:
+    ip: 10.1.20.106
+    port: 80
+    desc: Outlook Web Access 01
+    poolname: owa
+  owa02:
+    ip: 10.1.20.107
+    port: 80
+    desc: Outlook Web Access 02
+    poolname: owa
+
+
+##################################
+#Define Virtual Server Dictionary#
+##################################
+
+virtuals:
+  web_vs:
+    desc: Webserver Virtual
+    destip: 10.1.10.105
+    port: 80
+    snat: Automap
+    profile1: http
+    profile2: clientssl
+    poolname: webpool
+  owa_vs:
+    desc: Outlook Web Access Virtual
+    destip: 10.1.10.106
+    port: 80
+    snat: Automap
+    profile1: http
+    profile2: clientssl
+    poolname: owa
+
+
+

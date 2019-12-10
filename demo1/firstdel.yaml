@@ -1,0 +1,57 @@
+---
+
+- name: Del Create a VIP, pool and pool members
+  hosts: all
+  connection: local
+
+  vars:
+    ltm01:
+      password: admin
+      server: 10.1.1.245
+      user: admin
+      validate_certs: no
+      server_port: 443
+
+  tasks:
+
+    - name: Delete a Virtual Server
+      tags: 
+        - virtual
+      bigip_virtual_server:
+        provider: "{{ ltm01 }}"
+        state: absent
+        name: web_vip
+
+
+    - name: Delete members to pool
+      tags:
+        - members
+      bigip_pool_member:
+        provider: "{{ ltm01 }}"
+        state: absent
+        description: "webserver {{ item.name }}"
+        host: "{{ item.host }}"
+        name: "{{ item.name }}"
+        pool: web
+        port: "80"
+      with_items:
+        - host: 10.1.20.101
+          name: web01
+        - host: 10.1.20.102
+          name: web02
+        - host: 10.1.20.103
+          name: web03
+      delegate_to: localhost
+
+    - name: Delete a pool
+      tags:
+        - pool 
+      bigip_pool:
+        provider: "{{ ltm01 }}"
+        state: absent
+        name: web
+
+
+
+
+
