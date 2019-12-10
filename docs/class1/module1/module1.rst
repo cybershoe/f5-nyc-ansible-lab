@@ -32,6 +32,8 @@ TASK 1 ‑ Install the *python-virtualenv* package
 
 1.	Open an SSH session or Terminal window to the Ubuntu host
 
+.. HINT:: Log in to the jumphost with username **|jumpuser|** and password **|jumppass|**
+
 2.	Run the following command to install the *python-virtualenv* package:
 
   .. code-block:: bash
