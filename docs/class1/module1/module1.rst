@@ -32,7 +32,7 @@ TASK 1 ‑ Install the *python-virtualenv* package
 
 1.	Open an SSH session or Terminal window to the Ubuntu host
 
-.. HINT:: Log in to the jumphost with username ** |jumpuser| ** and password ** |jumppass| **
+.. HINT:: Log in to the jumphost with **username:** |jumpuser| and **password:** |jumppass|
 
 2.	Run the following command to install the *python-virtualenv* package:
 
@@ -41,7 +41,7 @@ TASK 1 ‑ Install the *python-virtualenv* package
     $ sudo apt install python-virtualenv
 
 .. NOTE:: You will be prompted for a password. Use the same password you
-  used to log into the jumphost
+  used to log into the jumphost (|jumppass|)
 
 .. NOTE:: In the lab environment, this package is already installed. Unless
   there has been a new version released since the lab was built, you should

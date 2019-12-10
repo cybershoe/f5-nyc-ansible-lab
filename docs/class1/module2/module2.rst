@@ -29,6 +29,8 @@ TASK 1 - Review the BIG-IP configuration
 
 1. Log in to the BIG-IP web GUI.
 
+.. HINT:: Log in to the BIG-IP with **username:** admin and **password:** |bigippass|
+
 2. From the left-hand navigation menu, expand the **Local Traffic** section
 
 3. Explore the **Virtual Servers**, **Pools**, and **Nodes** sections
