@@ -19,64 +19,60 @@ Lab Requirements:
 
 Estimated completion time: 10 minutes
 
-TASK 1 - Delete the virtual server
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+TASK 1 - Review the playbook and variable files
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-1. In the BIG-IP web GUI, from the left-hand navigation menu, navigate to 
-**Local Traffic** -> **Virtual Servers**
+1.	From the SSH or terminal session, change into the demo1 folder
+and list the contents:
 
-2. Select the *web_vip* virtual server, and click **Delete...**
+  .. code-block:: bash
 
-  |image4|
-
-3. On the following screen, click **Delete** again to confirm.
-
-.. NOTE:: The Virtual Server list should now be empty
+    $ cd ~/demo2
+    $ ls
 
 
-TASK 2 ‑ Re-run the playbook with a specific tag
+2. Examine the variable file and playbook:
+
+  .. code-block:: bash
+
+    $ less netvar.yaml
+    $ less second.yaml
+
+  .. NOTE:: In this lab, the *netvar.yaml* file contains the information needed
+  to configure multiple services, while the *second.yaml* playbook contains the
+  steps to implement the configured in the variables file. This allows you to 
+  maintain the configuration without modifying the main playbook.
+
+  .. NOTE:: You'll also notice that the tasks in this playbook include a 
+  "with_dict" parameter. This is an example of a loop, and in this case it
+  allows the playbook to run the same task multiple times, iterating over
+  elements of a YAML dictionary (key-value array), again simplifying the main
+  playbook and reducing the amount of code that needs to be duplicated. More 
+  information on loop structures can be found in the `Ansible Docs section on
+  loops`_.
+
+TASK 2 - Run the second playbook
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+1. Run the second playbook:
+
+  .. code-block:: bash
+
+    $ ansible-playbook -i inventory/hosts second.yaml
+
+2. Return to the BIG-IP GUI and review the objects that have been created.
+
+TASK 3 ‑ Re-run the playbook with a specific tag
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-1.	From the SSH or terminal session, re-run the playbook with the "virtual" 
-tag:
+1. From the SSH or terminal session, execute the seconddel.yaml playbook:
 
   .. code-block:: bash
 
-    $ ansible-playbook -i inventory/hosts first.yaml --tags virtual
+    $ ansible-playbook -i inventory/hosts seconddel.yaml
 
-Watch the output from the *ansible-playbook* command... do you see all of the
-same lines that you did in the last lab?
-
-2.	Back in the BIG-IP GUI, refresh the Virtual Servers list.
-
-TASK 3 - Remove the configuration from the first playbook
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-1. From the SSH or terminal session, examine the firstdel.yaml playbook:
-
-  .. code-block:: bash
-
-    $ less firstdel.yaml
-
-.. NOTE:: You'll notice two main differences between this playbook and the 
-  *first.yaml* playbook. First, you'll see that each task includes the 
-  :code:`state: absent` parameter. This tells Ansible to remove the object
-  defined in the task rather that create it. You'll also notice that the tasks
-  are in the opposite order from the first playbook. This is because Ansible
-  executes tasks in order, and it is necessary to delete objects in the correct
-  order, i.e.: you cannot delete a pool if a virtual server is using it.
-
-2. Execute the firstdel.yaml playbook:
-
-  .. code-block:: bash
-
-    $ ansible-playbook -i inventory/hosts firstdel.yaml
-
-4. Back in the BIG-IP GUI, go back to the **Virtual Servers**, **Pools**, and
-**Nodes** screens, and confirm that the configuration has been deleted.
+2. From the BIG-IP GUI, confirm that the configuration has been deleted.
 
 .. NOTE:: Keep your SSH or terminal session open for the next lab.
 
-.. |image4| image:: /_static/class1/image4.png
-
 .. _Ansible Docs section on variables: https://docs.ansible.com/ansible/latest/user_guide/playbooks_variables.html
+.. _Ansible Docs section on loops: https://docs.ansible.com/ansible/latest/user_guide/playbooks_loops.html
