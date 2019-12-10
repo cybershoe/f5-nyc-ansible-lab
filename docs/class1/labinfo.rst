@@ -30,7 +30,10 @@ Each student has been provided a Ubuntu-based jumphost, which, in this lab,
 also serves as the Ansible host that will be used to run your Ansible
 playbooks. You can access this host using your computer's RDP client.
 
-Once you are logged into the jumphost, you will have access to a web browesr
+See your instructor for information on how to access your personal lab
+environment.
+
+Once you are logged into the jumphost, you will have access to a web browser
 and terminal emulator to access the other systems in the lab.
 
 |image6|
