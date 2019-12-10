@@ -32,8 +32,8 @@ eventname = "Agility %s Hands-on Lab Guide" % (year)
 rst_prolog = """
 .. |jumpuser| replace:: f5student
 .. |jumppass| replace:: f5DEMOs4u#
-.. |bigippass| replace:: admin
-.. |rootpass| replace:: default
+.. |bigippass| replace:: f5DEMOs4u#
+.. |rootpass| replace:: f5DEMOS4u#
 .. |classname| replace:: %s
 .. |classbold| replace:: **%s**
 .. |classitalic| replace:: *%s*
