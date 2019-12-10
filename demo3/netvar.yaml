@@ -1,5 +1,5 @@
 ltm01:
-  password: admin
+  password: f5DEMOs4u#
   server: 10.1.1.245
   user: admin
   validate_certs: no
