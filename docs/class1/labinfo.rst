@@ -31,7 +31,9 @@ also serves as the Ansible host that will be used to run your Ansible
 playbooks. You can access this host using your computer's RDP client.
 
 Once you are logged into the jumphost, you will have access to a web browesr
-and terminal emulator to access the other systems in the lab. 
+and terminal emulator to access the other systems in the lab.
+
+|image6|
 
 If you prefer, you can also connect directly to the jump host and BIG-IP GUI
 using your own SSH client and web browser.
@@ -74,3 +76,5 @@ The following credentials will be utilized throughout this Lab guide.
 | Jump Host Access                         | |jumpuser|     | |jumppass|     |
 +------------------------------------------+----------------+----------------+
 
+.. |image6| figure:: /_static/class1/image6.png 
+    IP addresses are given as an example. Your IP addresses will be different.
