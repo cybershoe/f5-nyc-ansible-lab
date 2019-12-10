@@ -5,7 +5,7 @@
 # ------------
 #
 # REQUIRED: Your class/lab name
-classname = "F5 Identity and Access Management Solutions"
+classname = "F5 Ansible Automation Lab"
 
 # OPTIONAL: The URL to the GitHub Repository for this class
 github_repo = "https://github.com/cybershoe/f5-nyc-ansible-lab.git"
