@@ -31,7 +31,7 @@ TASK 1 - Examine the current ASM configuration
 **Security** -> **Application Security** -> **Security Policies** -> 
 **Policies List**
 
-  |image4|
+  |image5|
 
 .. NOTE:: The security policies list should be empty
 
