@@ -1,17 +1,22 @@
 Lab 4: Using Variables
 ======================
 
+Overview
+~~~~~~~~
+
 One of the more powerful features of Ansible is its ability to use variables
 to separate infrastructure description from implementation, allowing you to
 re-use code more easily. Ansible has a robust variable precendence system that
 can be used to define global, host-specific, or run-time parameters. More 
 information is available from the `Ansible Docs section on variables`_.
 
-Objective:
+Objective
+---------
 
 -  Use variables to simplify the main playbook
 
-Lab Requirements:
+Lab Requirements
+----------------
 
 -  SSH or Terminal access to the Ubuntu Jumpbox/Ansible Host
 
@@ -62,8 +67,8 @@ TASK 2 - Run the second playbook
 
 2. Return to the BIG-IP GUI and review the objects that have been created.
 
-TASK 3 ‑ Re-run the playbook with a specific tag
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+TASK 3 ‑ Remove the configuration from the second playbook
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 1. From the SSH or terminal session, execute the seconddel.yaml playbook:
 
   .. code-block:: bash

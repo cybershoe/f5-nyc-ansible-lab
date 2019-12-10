@@ -1,17 +1,22 @@
 Lab 2: Running the first playbook
 =================================
 
+Overview
+~~~~~~~~
+
 In this lab, we will run a playbook that will create a configuration on 
 a BIG-IP. This is a very basic configuration, consisting of one virtual
 server, one pool, and three pool members.
 
-Objective:
+Objective
+---------
 
 -  Understand the basic structure of an Ansible Playbook
 
 -  Deploy a simple BIG-IP configuration using Ansible
 
-Lab Requirements:
+Lab Requirements
+----------------
 
 -  SSH or Terminal access to the Ubuntu Jumpbox/Ansible Host
 

@@ -1,14 +1,19 @@
 Lab 3: Using tags with Ansible
 ==============================
 
+Overview
+~~~~~~~~
+
 In this lab, we will use tags to selectively run only certain parts of the
 playbook. You can learn more about tags from the `Ansible Tags Documentation`_.
 
-Objective:
+Objective
+---------
 
 -  Use tags to re-run a subset of the first playbook
 
-Lab Requirements:
+Lab Requirements
+----------------
 
 -  SSH or Terminal access to the Ubuntu Jumpbox/Ansible Host
 

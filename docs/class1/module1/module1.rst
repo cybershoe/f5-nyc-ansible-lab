@@ -1,6 +1,9 @@
 Lab 1: Installing Ansible in a Virtualenv
 =====================================
 
+Overview
+~~~~~~~~
+
 F5 Recommends installing ansible on a python virtual environment (virtualenv). 
 This is also a recommended way to use ansible within the ansible opensource 
 community. 
@@ -10,14 +13,15 @@ conflicting dependencies and differing versions. *virtualenv* works by simply
 creating a folder which contains all of the necessary executables and 
 dependencies for a specific version of Python.
 
-
-Objective:
+Objective
+---------
 
 -  Understand how to install *python-virtualenv* in Debian/Ubuntu Linux
 
 -  Create a virtual environment in which to run Ansible
 
-Lab Requirements:
+Lab Requirements
+----------------
 
 -  SSH or Terminal access to the Ubuntu Jumpbox/Ansible Host
 
