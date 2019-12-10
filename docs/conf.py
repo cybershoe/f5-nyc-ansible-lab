@@ -28,7 +28,7 @@ import f5_sphinx_theme
 
 year = time.strftime("%Y")
 eventname = "Agility %s Hands-on Lab Guide" % (year)
-
+# dummy edit to force sync
 rst_prolog = """
 .. |jumpuser| replace:: f5student
 .. |jumppass| replace:: f5DEMOs4u#
