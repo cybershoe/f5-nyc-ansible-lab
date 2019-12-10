@@ -14,17 +14,27 @@ ahead of time. These are:
 -  Duplicate Lab environments for each student for improved
    collaboration
 
--  The Virtual BIG-IP has been pre-licensed and provisioned with Access
-   Policy Manager (APM)
+-  The Virtual BIG-IP has been pre-licensed and provisioned with Local Traffic
+   Manager (LTM) and Application Security Manager (ASM)
 
 -  Pre-staged configurations to speed up lab time, reducing repetitive
    tasks to focus on key learning elements.
 
 If you wish to replicate these labs in your environment you will need to
-perform these steps accordingly. Additional lab resources are provided
-as illustrated in the diagram below:
+perform these steps accordingly. 
 
-.. image:: /_static/class1/image2.png
+Accessing the Lab
+~~~~~~~~~~~~~~~~~
+
+Each student has been provided a Ubuntu-based jumphost, which, in this lab,
+also serves as the Ansible host that will be used to run your Ansible
+playbooks. You can access this host using your computer's RDP client.
+
+Once you are logged into the jumphost, you will have access to a web browesr
+and terminal emulator to access the other systems in the lab. 
+
+If you prefer, you can also connect directly to the jump host and BIG-IP GUI
+using your own SSH client and web browser.
 
 Timing for labs
 ~~~~~~~~~~~~~~~
@@ -35,17 +45,19 @@ we strived to provide an estimate based on several people, each having a
 different level of experience. Below is an estimate of how long it will
 take for each lab:
 
-+-----------------------------------------+----------------------+
-| **Lab Description**                     | **Time Allocated**   |
-+=========================================+======================+
-| LAB I (SAML Service Provider (SP))      | 25 minutes           |
-+-----------------------------------------+----------------------+
-| LAB II (SAML Identity Provider (IDP))   | 25 minutes           |
-+-----------------------------------------+----------------------+
-| LAB III (Kerberos to SAML)              | 25 minutes           |
-+-----------------------------------------+----------------------+
-| LAB IV (SAAS Federation IAPP)           | 25 minutes           |
-+-----------------------------------------+----------------------+
++------------------------------------------------------+--------------------+
+| **Lab Description**                                  | **Time Allocated** |
++======================================================+====================+
+| LAB 1 (Installing Ansible in a Virtualenv)           | 5 minutes          |
++------------------------------------------------------+--------------------+
+| LAB 2 (Running the first playbook)                   | 25 minutes         |
++------------------------------------------------------+--------------------+
+| LAB 3 (Using tags with Ansible)                      | 25 minutes         |
++------------------------------------------------------+--------------------+
+| LAB 4 (Using Variables)                              | 25 minutes         |
++------------------------------------------------------+--------------------+
+| LAB 5 (Importing an ASM Policy from an XML Template) | 10 minutes         |
++------------------------------------------------------+--------------------+
 
 Authentication – Credentials
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -55,29 +67,10 @@ The following credentials will be utilized throughout this Lab guide.
 +------------------------------------------+----------------+----------------+
 | **Credential Use**                       | **User ID**    | **Password**   |
 +==========================================+================+================+
-| BIG-IP Configuration Utility (GUI)       | admin          | admin          |
+| BIG-IP Configuration Utility (GUI)       | admin          | |bigippass|    |
 +------------------------------------------+----------------+----------------+
-| BIG-IP CLI Access (SSH)                  | root           | default        |
+| BIG-IP CLI Access (SSH)                  | root           | |rootpass|     |
 +------------------------------------------+----------------+----------------+
-| Jump Host Access                         | f5demo\\user   | Agility1       |
-+------------------------------------------+----------------+----------------+
-| All User authentication for Labs/Tasks   | user           | Agility1       |
+| Jump Host Access                         | |jumpuser|     | |jumppass|     |
 +------------------------------------------+----------------+----------------+
 
-Utilized Browsers
-~~~~~~~~~~~~~~~~~
-
-The preferred browsers for this lab are Firefox and Internet Explorer.
-Shortcut links have been provided to speed access to targeted resources
-and assist you in your tasks. Except where noted, either browser can be
-used for all lab tasks.
-
-General Notes
-~~~~~~~~~~~~~
-
-As noted previously, environment staging has been done to speed up lab
-time, reducing repetitive tasks to focus on key learning elements. Where
-possible steps that have been optimized have been called out with links
-and references provided in the *Additional Information* section for
-additional clarification. The intention being that the lab guide truly
-serves as a resource guide for all your future federation deployments.

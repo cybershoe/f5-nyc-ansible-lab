@@ -30,6 +30,10 @@ year = time.strftime("%Y")
 eventname = "Agility %s Hands-on Lab Guide" % (year)
 
 rst_prolog = """
+.. |jumpuser| replace:: f5student
+.. |jumppass| replace:: f5DEMOs4u#
+.. |bigippass| replace:: admin
+.. |rootpass| replace:: default
 .. |classname| replace:: %s
 .. |classbold| replace:: **%s**
 .. |classitalic| replace:: *%s*
@@ -124,7 +128,7 @@ master_doc = 'index'
 
 # General information about the project.
 project = classname
-copyright = u'2017, F5 Networks, Inc.'
+copyright = u'2019, F5 Networks, Inc.'
 author = u'F5 Networks, Inc.'
 
 # The version info for the project you're documenting, acts as replacement for

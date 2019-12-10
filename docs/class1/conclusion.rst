@@ -1,16 +1,14 @@
 Conclusion
 ==========
 
-Thank you for your participation in the 301 Access Policy Manager (APM)
-Federation Lab. This Lab Guide has highlighted several notable features
-of SAML Federation. It does not attempt to review all F5 APM Federation
-features and configurations but serves as an introduction to allow the
-student to further explore the BIG-IP platform and Access Policy Manager
-(APM), its functions & features.
+Thank you for your participation in this lab. Ansible is a skill that is quick
+to learn, but can take months to master. Getting started is the hardest part,
+and we hope that this lab has given you a good starting point to begin
+automating your F5 environment. 
 
-.. toctree::
-   :maxdepth: 1
-   :glob:
+One of the great strengths of Ansible is its extensive module library, and we
+encourage you to look at the other modules available and see how this tool can
+help you automate other parts of your environment, beyond just F5.
 
-   learn
-   kerberos
+Again, thank you for joining us today!
+

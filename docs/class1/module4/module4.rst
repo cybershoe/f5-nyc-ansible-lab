@@ -27,7 +27,7 @@ Estimated completion time: 10 minutes
 TASK 1 - Review the playbook and variable files
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-1.	From the SSH or terminal session, change into the demo1 folder
+1.	From the SSH or terminal session, change into the demo2 folder
 and list the contents:
 
   .. code-block:: bash
