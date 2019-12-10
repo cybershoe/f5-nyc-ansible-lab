@@ -39,17 +39,17 @@ and list the contents:
     $ less second.yaml
 
   .. NOTE:: In this lab, the *netvar.yaml* file contains the information needed
-to configure multiple services, while the *second.yaml* playbook contains the
-steps to implement the configured in the variables file. This allows you to
-maintain the configuration without modifying the main playbook.
+    to configure multiple services, while the *second.yaml* playbook contains the
+    steps to implement the configured in the variables file. This allows you to
+    maintain the configuration without modifying the main playbook.
 
   .. NOTE:: You'll also notice that the tasks in this playbook include a 
-"with_dict" parameter. This is an example of a loop, and in this case it
-allows the playbook to run the same task multiple times, iterating over
-elements of a YAML dictionary (key-value array), again simplifying the main
-playbook and reducing the amount of code that needs to be duplicated. More 
-information on loop structures can be found in the `Ansible Docs section on
-loops`_.
+    "with_dict" parameter. This is an example of a loop, and in this case it
+    allows the playbook to run the same task multiple times, iterating over
+    elements of a YAML dictionary (key-value array), again simplifying the main
+    playbook and reducing the amount of code that needs to be duplicated. More 
+    information on loop structures can be found in the `Ansible Docs section on
+    loops`_.
 
 TASK 2 - Run the second playbook
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
