@@ -35,6 +35,9 @@ and terminal emulator to access the other systems in the lab.
 
 |image6|
 
+.. NOTE:: IP addresses in this image are examples only, your IP addresses
+  will be different
+
 If you prefer, you can also connect directly to the jump host and BIG-IP GUI
 using your own SSH client and web browser.
 
@@ -76,5 +79,4 @@ The following credentials will be utilized throughout this Lab guide.
 | Jump Host Access                         | |jumpuser|     | |jumppass|     |
 +------------------------------------------+----------------+----------------+
 
-.. |image6| figure:: /_static/class1/image6.png 
-    IP addresses are given as an example. Your IP addresses will be different.
+.. |image6| image:: /_static/class1/image6.png 
