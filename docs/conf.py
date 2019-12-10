@@ -24,7 +24,7 @@ import re
 import pkgutil
 import string
 sys.path.insert(0, os.path.abspath('.'))
-import f5_sphinx_theme
+#import f5_sphinx_theme
 
 year = time.strftime("%Y")
 eventname = "Agility %s Hands-on Lab Guide" % (year)
