@@ -44,9 +44,10 @@ and list the contents:
     $ less second.yaml
 
   .. NOTE:: In this lab, the *netvar.yaml* file contains the information needed
-    to configure multiple services, while the *second.yaml* playbook contains the
-    steps to implement the configured in the variables file. This allows you to
-    maintain the configuration without modifying the main playbook.
+    to configure multiple services, while the *second.yaml* playbook contains
+    the steps to implement the configuration defined in the variables file. 
+    This allows you to maintain the configuration without modifying the main 
+    playbook.
 
   .. NOTE:: You'll also notice that the tasks in this playbook include a 
     "with_dict" parameter. This is an example of a loop, and in this case it
