@@ -58,11 +58,11 @@ take for each lab:
 +======================================================+====================+
 | LAB 1 (Installing Ansible in a Virtualenv)           | 5 minutes          |
 +------------------------------------------------------+--------------------+
-| LAB 2 (Running the first playbook)                   | 25 minutes         |
+| LAB 2 (Running the first playbook)                   | 10 minutes         |
 +------------------------------------------------------+--------------------+
-| LAB 3 (Using tags with Ansible)                      | 25 minutes         |
+| LAB 3 (Using tags with Ansible)                      | 10 minutes         |
 +------------------------------------------------------+--------------------+
-| LAB 4 (Using Variables)                              | 25 minutes         |
+| LAB 4 (Using Variables)                              | 10 minutes         |
 +------------------------------------------------------+--------------------+
 | LAB 5 (Importing an ASM Policy from an XML Template) | 10 minutes         |
 +------------------------------------------------------+--------------------+
